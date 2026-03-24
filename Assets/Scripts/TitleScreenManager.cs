@@ -1,16 +1,43 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleScreenManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [SerializeField] GameObject titleCanvas;
+    [SerializeField] GameObject creditsCanvas;
+
     void Start()
+    {
+        titleCanvas.SetActive(true);
+        creditsCanvas.SetActive(false);
+    }
+
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void Credits()
+    {
+        titleCanvas.SetActive(false);
+        creditsCanvas.SetActive(true);
+    }
+
+    public void Menu()
+    {
+        creditsCanvas.SetActive(false);
+        titleCanvas.SetActive(true);
     }
 }

@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxSpeed = 8f;          // Velocidade máxima do carrinho
 
     [Header("Peso")]
-    [SerializeField] float realWeight = 0f;        // Peso atual carregado no carrinho
+    public float realWeight = 0f;        // Peso atual carregado no carrinho
 
     Rigidbody2D rb;
 
